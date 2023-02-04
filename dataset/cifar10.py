@@ -31,6 +31,10 @@ class CIFAR10DataSet():
         dl = DataLoader(ds,batch_size=batch_size, num_workers=num_workers, drop_last=True)
         return dl
     
+    def get_batch(self, dataloader):
+        return next(iter(dataloader))
+    
+    
     
 
 

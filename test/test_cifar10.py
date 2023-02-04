@@ -16,4 +16,10 @@ class Test_CIFAR10(unittest.TestCase):
         for batch, (imgs, labels) in enumerate(dl):
             print(batch, imgs.shape, labels)
 
+    def test_cifar10_get_batch(self):
+        c = CIFAR10DataSet()
+        dl = c.train_dataloader(batch_size=8)
+        x,y = c.get_batch(dl)
+        assert(len(x) == 8 and len(y) == 8)
+  
 
